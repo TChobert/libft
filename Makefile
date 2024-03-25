@@ -51,6 +51,13 @@ OBJS_DIR := .
 
 OBJS := $(patsubst %.c, %.o, $(SRCS))
 
+##### HOOKS #####
+
+GIT_ROOT_PATH := $(shell git rev-parse --show-toplevel)
+
+PREPUSH_FILE := $(GIT_ROOT_PATH)/.git/hooks/pre-push
+
+
 ##### RULES #####
 
 all: $(NAME)
@@ -73,5 +80,10 @@ fclean: clean
 
 re: fclean all
 
+install-hooks: install-prepush-hooks
 
-.PHONY: all clean fclean re
+install-prepush-hooks:
+	echo "norminette" > $(PREPUSH_FILE)
+	chmod +x $(PREPUSH_FILE)
+
+.PHONY: all clean fclean re install-hooks install-prepush-hooks
