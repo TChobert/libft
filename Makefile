@@ -10,12 +10,18 @@ CC := cc
 
 CFLAGS += -Wall
 CFLAGS += -Wextra 
-CFLAGS += -Werror
+
+ifneq ($(NOERROR), true)
+	CFLAGS += -Werror
+endif
 
 ifeq ($(DEBUG), true)
 	DFLAGS += -g3
-	DFLAGS += -fsanitize=address,undefined,leak
+	ifneq ($(NOSANITIZE), true)
+		DFLAGS += -fsanitize=address,undefined,leak
+	endif
 endif
+
 
 AR := ar
 
