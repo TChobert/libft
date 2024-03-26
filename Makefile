@@ -36,6 +36,7 @@ SRCS += ft_isdigit.c
 SRCS += ft_isalnum.c
 SRCS += ft_isascii.c
 SRCS += ft_isprint.c
+SRCS += ft_strlen.c
 
 vpath %.c $(SRCS_DIR)
 
