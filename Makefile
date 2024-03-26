@@ -34,6 +34,7 @@ SRCS_DIR := .
 SRCS += ft_isalpha.c
 SRCS += ft_isdigit.c
 SRCS += ft_isalnum.c
+SRCS += ft_isascii.c
 
 vpath %.c $(SRCS_DIR)
 
