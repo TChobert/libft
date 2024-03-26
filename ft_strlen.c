@@ -5,6 +5,10 @@ size_t	ft_strlen(const char *s)
 	size_t	size;
 	
 	size = 0;
+	if (s == NULL)
+	{
+		return (0);
+	}
 	while (s[size] != '\0')
 	{
 		++size;
@@ -16,8 +20,8 @@ size_t	ft_strlen(const char *s)
 int	main(int ac, char **av)
 {
 	(void)ac;
-	printf("mine = %ld\n", ft_strlen(av[1]));
-	printf("true = %ld\n", strlen(av[1]));
+	printf("mine = %zu\n", ft_strlen(av[1]));
+	printf("true = %zu\n", strlen(av[1]));
 	return (EXIT_SUCCESS);
 }
 */
