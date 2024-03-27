@@ -38,6 +38,7 @@ SRCS += ft_isascii.c
 SRCS += ft_isprint.c
 SRCS += ft_strlen.c
 SRCS += ft_memset.c
+SRCS += ft_bzero.c
 
 vpath %.c $(SRCS_DIR)
 
