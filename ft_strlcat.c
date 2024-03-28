@@ -23,13 +23,14 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	dst[i + dst_len] = '\0';
 	return (total_len);
 }
-
+/*
 int	main(int ac, char **av)
 {
 	(void)ac;
-	char	dst[11] = "Bjr ";
+	char	dst[7] = "Bjr";
 
-	printf("%zu\n", ft_strlcat(dst, av[1], 20));
+	printf("%zu\n", ft_strlcat(dst, av[1], 1));
 	printf("%s\n", dst);
 	return (EXIT_SUCCESS);
 }
+*/
