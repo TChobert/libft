@@ -41,6 +41,7 @@ SRCS += ft_memset.c
 SRCS += ft_bzero.c
 SRCS += ft_memcpy.c
 
+SRCS += ft_strlcpy.c
 SRCS += ft_strlcat.c
 
 vpath %.c $(SRCS_DIR)
