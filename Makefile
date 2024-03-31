@@ -47,6 +47,7 @@ SRCS += ft_toupper.c
 SRCS += ft_tolower.c
 SRCS += ft_strchr.c
 SRCS += ft_strrchr.c
+SRCS += ft_strncmp.c
 
 vpath %.c $(SRCS_DIR)
 
