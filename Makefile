@@ -53,6 +53,7 @@ SRCS += ft_memcmp.c
 
 SRCS += ft_atoi.c
 SRCS += ft_calloc.c
+SRCS += ft_strdup.c
 
 vpath %.c $(SRCS_DIR)
 
