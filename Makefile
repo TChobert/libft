@@ -51,6 +51,8 @@ SRCS += ft_strncmp.c
 SRCS += ft_memchr.c
 SRCS += ft_memcmp.c
 
+SRCS += ft_atoi.c
+
 vpath %.c $(SRCS_DIR)
 
 ## HEADERS ##
