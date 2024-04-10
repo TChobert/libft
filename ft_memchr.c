@@ -2,21 +2,22 @@
 
 char	*ft_memchr(const void *s, int c, size_t n)
 {
-	unsigned char	*occurence = (unsigned char *)s;
-	size_t			i;
+	t_byte	current;
+	size_t	i;
 
+	current = (t_byte)s;
 	i = 0;
 	while (i < n)
 	{
-		if (occurence[i] == c)
+		if (current[i] == c)
 		{
-			return (char *)(s + i);
+			return ((char *)(s + i));
 		}
 		++i;
 	}
 	return (NULL);
 }
-/*
+
 int	main(int ac, char **av)
 {
 	(void)ac;
@@ -25,4 +26,3 @@ int	main(int ac, char **av)
 	printf("true = %p\n", ft_memchr(av[1], atoi(av[2]), strlen(av[1])));
 	printf("true = %s\n", ft_memchr(av[1], atoi(av[2]), strlen(av[1])));
 }
-*/
