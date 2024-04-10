@@ -2,12 +2,12 @@
 
 void	*ft_memset(void *s, int c, size_t n)
 {
-	uint8_t	*current;
-	uint8_t	value;
-	size_t	size;
+	t_byte			current;
+	unsigned char	value;
+	size_t			size;
 
 	current = s;
-	value = (uint8_t)c;
+	value = (unsigned char)c;
 	size = 0;
 	while (size < n)
 	{
@@ -16,7 +16,6 @@ void	*ft_memset(void *s, int c, size_t n)
 	}
 	return (s);
 }
-
 /*
 int main(void)
 {
@@ -28,7 +27,7 @@ int main(void)
 	printf("true = %s\n", array2);
 	return (EXIT_SUCCESS);
 }
-
+/*
 int	main(void)
 {
 	int	count = 0;
