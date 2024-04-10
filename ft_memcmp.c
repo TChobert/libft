@@ -19,7 +19,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	}
 	return (0);
 }
-
+/*
 int	main(int ac, char **av)
 {
 	(void)ac;
@@ -27,3 +27,4 @@ int	main(int ac, char **av)
 	printf("true = %d\n", memcmp(av[1], av[2], atoi(av[3])));
 	return (EXIT_SUCCESS);
 }
+*/
