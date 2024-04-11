@@ -56,6 +56,7 @@ SRCS += ft_calloc.c
 SRCS += ft_strdup.c
 SRCS += ft_substr.c
 SRCS += ft_strjoin.c
+SRCS += ft_strtrim.c
 
 vpath %.c $(SRCS_DIR)
 
