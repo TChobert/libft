@@ -61,6 +61,7 @@ SRCS += ft_strtrim.c
 #ft_itoa.c
 SRCS += ft_strmapi.c
 SRCS += ft_striteri.c
+SRCS += ft_putchar_fd.c
 
 vpath %.c $(SRCS_DIR)
 
