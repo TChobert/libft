@@ -40,6 +40,12 @@ static void	ft_write_nbr(long nb, char *new_str)
 	size_t	i;
 	
 	i = 0;
+	if (nb == 0)
+	{
+		new_str[0] = ASCII_ZERO;
+		new_str[1] = '\0';
+		return;
+	}
 	if (nb < 0)
 	{
 		new_str[0] = '-';
