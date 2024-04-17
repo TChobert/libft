@@ -2,7 +2,12 @@
 
 static size_t	get_len_recursive(long nb, size_t final_len)
 {
-	if (nb < 10)
+	if (nb < 0)
+	{
+		final_len += 1;
+		nb = -nb;
+	}
+	if (nb < 10 && nb > -10)
 	{
 		return (final_len + 1);
 	}
@@ -12,45 +17,66 @@ static size_t	get_len_recursive(long nb, size_t final_len)
 	}
 }
 
-static size_t	get_len(long nb)
+static void	ft_reverse_string(char *new_str)
 {
-	return (get_len_recursive(nb, 0));
+	char	temp;
+	size_t	start;
+	size_t	end;
+
+	start = (new_str[0] == '-') ? 1 : 0;
+	end = ft_strlen(new_str) - 1;
+	while (start < end)
+	{
+		temp = new_str[start];
+		new_str[start] = new_str[end];
+		new_str[end] = temp;
+		++start;
+		--end;
+	}
 }
 
 static void	ft_write_nbr(long nb, char *new_str)
 {
 	size_t	i;
-
-	i = ft_strlen(new_str);
+	
+	i = 0;
+	if (nb < 0)
+	{
+		new_str[0] = '-';
+		i = 1;
+		nb = - nb;
+	}
 	while (nb != 0)
 	{
-		new_str[i] = (nb % 10) + 48;
+		new_str[i] = (nb % 10) + ASCII_ZERO;
 		nb = nb / 10;
-		--i;
+		++i;
 	}
+	new_str[i] = '\0';
 }
 
 char	*ft_itoa(int n)
 {
 	size_t	final_len;
-	char	*n_str;
+	char	*new_str;
 
-	final_len = get_len(n);
-	n_str = (char *)malloc(sizeof(char) * (final_len) + 1);
-	if (n_str == NULL)
+	final_len = get_len_recursive(n, 0);
+	new_str = (char *)malloc(sizeof(char) * (final_len + 1));
+	if (new_str == NULL)
 	{
 		return (NULL);
 	}
-	n_str[final_len + 1] = '\0';
-	ft_write_nbr(n, n_str);
-	return (n_str);
+	ft_write_nbr(n, new_str);
+	ft_reverse_string(new_str);
+	return (new_str);
 }
 
 int	main(int ac, char **av)
 {
+	char	*new_str;
 	(void)ac;
 	(void)av;
-	//printf("%zu\n", get_len(atoi(av[1])));
-	printf("%s\n", ft_itoa(1234567));
+	new_str = ft_itoa(atoi(av[1]));
+	printf("%s\n", new_str);
 	return (EXIT_SUCCESS);
 }
