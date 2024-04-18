@@ -56,5 +56,6 @@ void	ft_putnbr_fd(int n, int fd);
 // TYPEDEFS --------------------------------------------------------------------
 
 typedef unsigned char	*t_byte;
+//comment
 
 #endif
