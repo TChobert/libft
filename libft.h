@@ -56,6 +56,11 @@ void	ft_putnbr_fd(int n, int fd);
 // TYPEDEFS --------------------------------------------------------------------
 
 typedef unsigned char	*t_byte;
-//comment
+
+typedef struct			s_list
+{
+	void			*content;
+	struct s_list	*next;
+}						t_list;
 
 #endif
