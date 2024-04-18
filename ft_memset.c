@@ -27,7 +27,7 @@ int main(void)
 	printf("true = %s\n", array2);
 	return (EXIT_SUCCESS);
 }
-/*
+
 int	main(void)
 {
 	int	count = 0;
