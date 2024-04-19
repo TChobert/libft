@@ -76,7 +76,7 @@ char	**ft_split(char const *s, char c)
 	unsigned int	substrings_nb;
 	char			*current;
 	char			**output;
-	
+
 	i = 0;
 	current = (char *)s;
 	substrings_nb = ft_substrings_count(s, c);
@@ -93,13 +93,13 @@ char	**ft_split(char const *s, char c)
 			output[j++] = ft_strcpy(&current[i], substrings_len);
 			i += substrings_len;
 		}
-		else 
+		else
 			++i;
 	}
 	output[j] = NULL;
 	return (output);
 }
-
+/*
 int	main(int ac, char **av)
 {
 	(void)ac;
@@ -115,3 +115,4 @@ int	main(int ac, char **av)
 	}
 	return (EXIT_SUCCESS);
 }
+*/
