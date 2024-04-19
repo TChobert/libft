@@ -73,18 +73,14 @@ char	**ft_split(char const *s, char c)
 	size_t			i;
 	size_t			j;
 	size_t			substrings_len;
-	unsigned int	substrings_nb;
 	char			*current;
 	char			**output;
 
 	i = 0;
 	current = (char *)s;
-	substrings_nb = ft_substrings_count(s, c);
-	output = (char **)malloc(sizeof(char *) * (substrings_nb + 1));
+	output = (char **)malloc(sizeof(char *) * (ft_substrings_count(s, c) + 1));
 	if (output == NULL)
-	{
 		return (NULL);
-	}
 	while (s[i] != '\0')
 	{
 		if (is_sep(s[i], c) == false)
