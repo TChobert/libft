@@ -56,7 +56,7 @@ char	*ft_strcpy(char *s, size_t substrings_len)
 	return (new_str);
 }
 
-static size_t	ft_substrings_len(char *s, char c)
+static size_t	ft_get_substrings_len(char *s, char c)
 {
 	size_t	i;
 
@@ -85,7 +85,7 @@ char	**ft_split(char const *s, char c)
 	{
 		if (is_sep(s[i], c) == false)
 		{
-			substrings_len = ft_substrings_len(&current[i], c);
+			substrings_len = ft_get_substrings_len(&current[i], c);
 			output[j++] = ft_strcpy(&current[i], substrings_len);
 			i += substrings_len;
 		}
