@@ -66,6 +66,8 @@ SRCS += ft_putstr_fd.c
 SRCS += ft_putendl_fd.c
 SRCS += ft_putnbr_fd.c
 
+SRCS += ft_lstnew.c
+
 vpath %.c $(SRCS_DIR)
 
 ## HEADERS ##
