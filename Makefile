@@ -70,6 +70,7 @@ SRCS += ft_lstnew.c
 SRCS += ft_lstadd_front.c
 SRCS += ft_lstsize.c
 SRCS += ft_lstlast.c
+SRCS += ft_lstadd_back.c
 
 vpath %.c $(SRCS_DIR)
 
