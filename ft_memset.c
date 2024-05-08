@@ -4,15 +4,14 @@ void	*ft_memset(void *s, int c, size_t n)
 {
 	t_byte			current;
 	unsigned char	value;
-	size_t			size;
 
 	current = s;
 	value = (unsigned char)c;
-	size = 0;
-	while (size < n)
+	while (n > 0)
 	{
-		current[size] = value;
-		++size;
+		*current = value;
+		++current;
+		--n;
 	}
 	return (s);
 }
@@ -20,11 +19,11 @@ void	*ft_memset(void *s, int c, size_t n)
 int main(void)
 {
 	char	array[] = "AAAAA";
-	char	array2[] = "AAAAA";
-	ft_memset(array + 2, 86, 3);
-	memset(array2 + 2, 86, 3);
-	printf("mine = %s\n", array);
-	printf("true = %s\n", array2);
+	char	array2[] = "BBBBB";
+	ft_memset(array2 + 1, 'a', 3);
+	memset(array + 1, 'a', 3);
+	printf("mine = %s\n", array2);
+	printf("true = %s\n", array);
 	return (EXIT_SUCCESS);
 }
 
