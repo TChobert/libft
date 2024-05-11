@@ -2,12 +2,10 @@
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	t_byte	current_s1;
-	t_byte	current_s2;
+	const t_byte	*current_s1 = (const t_byte *)s1;
+	const t_byte	*current_s2 = (const t_byte *)s2;
 	size_t	i;
 
-	current_s1 = (t_byte)s1;
-	current_s2 = (t_byte)s2;
 	i = 0;
 	while (i < n)
 	{
