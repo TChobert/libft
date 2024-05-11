@@ -5,11 +5,10 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	void	*new_area;
 
 	new_area = (void *)malloc(nmemb * sizeof(size));
-	if (new_area == NULL)
+	if (new_area != NULL)
 	{
-		return (new_area);
+		ft_bzero(new_area, nmemb);
 	}
-	ft_bzero(new_area, nmemb);
 	return (new_area);
 }
 /*
