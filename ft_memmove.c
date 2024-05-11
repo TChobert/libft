@@ -1,41 +1,38 @@
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+static void	*ft_reverse_memcpy(void *dest, const void *src, size_t n)
 {
-	size_t	i;
-	t_byte	current_src;
-	t_byte	current_dest;
+	size_t			i;
+	const t_byte	*current_src = (const t_byte *)src;
+	t_byte			*current_dest;
 
-	current_src = (t_byte)src;
-	current_dest = (t_byte)dest;
-	if (current_dest < current_src)
+	i = n;
+	current_dest = (t_byte *)dest;
+	while (i > 0)
 	{
-		i = 0;
-		while (i < n)
-		{
-			current_dest[i] = current_src[i];
-			++i;
-		}
-	}
-	if (current_dest > current_src)
-	{
-		i = n;
-		while (i > 0)
-		{
-			current_dest[i - 1] = current_src[i - 1];
-			--i;
-		}
+		current_dest[i - 1] = current_src[i - 1];
+		--i;
 	}
 	return (dest);
 }
+
+void	*ft_memmove(void *dest, const void *src, size_t n)
+{
+	if (dest > src)
+	{
+		return (ft_reverse_memcpy(dest, src, n));
+	}
+	return (ft_memcpy(dest, src, n));
+}
+
 /*
 int main(void)
 {
 	char	str[] = "Hello World !";
-//	char	str2[] = "Hello World !";
+	char	str2[] = "Hello World !";
 	char	buffer[20];
 	char	buffer2[20];
-//
+
 	ft_memmove(buffer, str, 7);
 	memmove(buffer2, str2, 7);
 	buffer[7] = '\0';
@@ -48,9 +45,9 @@ int main(void)
 	memmove(buffer2, "Salut", 6);
 	printf("buffer apres insertion : %s\n", buffer);
 	printf("buffer2 apres insertion : %s\n", buffer2);
-//
+
 	ft_memmove(buffer, str, ft_strlen(str) + 1);
-	memmove(buffer2, str, ft_strlen(str + 1));
+	memmove(buffer2, str, ft_strlen(str)+ 1);
 	printf("bufferCC = %s\n", buffer);
 	printf("buffer2CC = %s\n", buffer2);
 	ft_memmove(buffer, str + 7, 6);

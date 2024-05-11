@@ -2,20 +2,19 @@
 
 void	*ft_memset(void *s, int c, size_t n)
 {
-	t_byte			current;
-	unsigned char	value;
-	size_t			size;
+	t_byte			*current;
+	size_t			i;
 
-	current = s;
-	value = (unsigned char)c;
-	size = 0;
-	while (size < n)
+	current = (t_byte *)s;
+	i = 0;
+	while (i < n)
 	{
-		current[size] = value;
-		++size;
+		current[i] = (t_byte)c;
+		++i;
 	}
 	return (s);
 }
+
 /*
 int main(void)
 {
@@ -60,4 +59,3 @@ int	main(void)
 	printf("\n");
 	return (EXIT_SUCCESS);
 }
-*/
