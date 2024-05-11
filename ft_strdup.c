@@ -1,26 +1,31 @@
 #include "libft.h"
 
-char	*ft_strdup(const char *s)
+static char	*ft_strcpy(char *dest, const char *src)
 {
 	size_t	i;
-	size_t	s_size;
-	char	*duplicate_s;
 
 	i = 0;
-	s_size = ft_strlen(s);
-	duplicate_s = (char *)malloc(sizeof(char) * (s_size + 1));
-	if (duplicate_s == NULL)
+	while (src[i] != '\0')
 	{
-		return (duplicate_s);
-	}
-	while (i < s_size)
-	{
-		duplicate_s[i] = s[i];
+		dest[i] = src[i];
 		++i;
 	}
-	duplicate_s[i] = '\0';
-	return (duplicate_s);
+	dest[i] = '\0';
+	return (dest);
 }
+
+char	*ft_strdup(const char *s)
+{
+	char	*duplicated_str;
+
+	duplicated_str = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
+	if (duplicated_str != NULL)
+	{
+		duplicated_str = ft_strcpy(duplicated_str, s);
+	}
+	return (duplicated_str);
+}
+
 /*
 int	main(int ac, char **av)
 {
