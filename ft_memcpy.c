@@ -2,20 +2,20 @@
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	t_byte	current_dest;
-	t_byte	current_src;
-	size_t	size;
+	const t_byte	*current_src = (const t_byte *)src;
+	t_byte			*current_dest;
+	size_t			i;
 
-	current_dest = dest;
-	current_src = (t_byte)src;
-	size = 0;
-	while (size < n)
+	i = 0;
+	current_dest = (t_byte *)dest;
+	while (i < n)
 	{
-		current_dest[size] = current_src[size];
-		++size;
+		current_dest[i] = current_src[i];
+		++i;
 	}
 	return (dest);
 }
+
 /*
 int	main(int ac, char **av)
 {

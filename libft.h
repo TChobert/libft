@@ -12,9 +12,13 @@
 
 # include <stdio.h>
 
+// DEFINES ---------------------------------------------------------------------
+
+# define ASCII_ZERO 48
+
 // TYPEDEFS --------------------------------------------------------------------
 
-typedef unsigned char	*t_byte;
+typedef unsigned char	t_byte;
 
 typedef struct			s_list
 {
@@ -70,10 +74,5 @@ void		ft_lstdelone(t_list *lst, void(*del)(void *));
 void		ft_lstclear(t_list **lst, void(*del)(void *));
 void		ft_lstiter(t_list **lst, void (*f)(void *));
 //t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
-
-
-// DEFINES ---------------------------------------------------------------------
-
-# define ASCII_ZERO 48
 
 #endif
