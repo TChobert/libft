@@ -1,19 +1,20 @@
 #include "libft.h"
+
 /*
-char	to_upper(unsigned int index, char c)
+static char	to_upper(unsigned int index, char c)
 {
 	(void)index;
 	return (ft_toupper(c));
 }
 */
+
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	size_t	i;
-	size_t	output_len;
-	char	*output;
+	size_t			i;
+	const size_t	output_len = ft_strlen(s);
+	char			*output;
 
 	i = 0;
-	output_len = ft_strlen(s);
 	output = (char *)malloc(sizeof(char) * (output_len + 1));
 	if (output == NULL)
 	{
@@ -21,19 +22,24 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	}
 	while (i < output_len)
 	{
-		output[i] = f(i, s[i]);
+		if (f != NULL)
+		{
+			output[i] = f(i, s[i]);
+		}
 		++i;
 	}
 	output[i] = '\0';
 	return (output);
 }
+
 /*
-int	main(void)
+int	main(int ac, char **av)
 {
-	char	str[] = "bonjour";
+	(void)ac;
+//	char	str[] = "bonjour";
 	char	*new_str;
 
-	new_str = ft_strmapi(str, to_upper);
+	new_str = ft_strmapi(av[1], to_upper);
 	printf("%s\n", new_str);
 	return (EXIT_SUCCESS);
 }
