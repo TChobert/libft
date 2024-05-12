@@ -1,87 +1,54 @@
 #include "libft.h"
 
-static size_t	get_len_recursive(long nb, size_t final_len)
+static size_t	get_number_len(long nb)
 {
-	if (nb < 0)
+	size_t	size;
+
+	size = (nb <= 0);
+	while (nb != 0)
 	{
-		final_len += 1;
-		nb = -nb;
+		nb /= 10;
+		++size;
 	}
-	if (nb < 10)
-	{
-		return (final_len + 1);
-	}
-	else
-	{
-		return (get_len_recursive(nb / 10, final_len + 1));
-	}
+	return (size);
 }
 
-static void	ft_reverse_string(char *new_str)
-{
-	char	temp;
-	size_t	start;
-	size_t	end;
-
-	end = ft_strlen(new_str) - 1;
-	if (*new_str == '-')
-	{
-		start = 1;
-	}
-	else
-		start = 0;
-	while (start < end)
-	{
-		temp = new_str[start];
-		new_str[start] = new_str[end];
-		new_str[end] = temp;
-		++start;
-		--end;
-	}
-}
-
-static void	ft_write_nbr(long nb, char *new_str)
+static void	fill_str_with_nbr(char *new_str, long nb, const size_t number_len)
 {
 	size_t	i;
 
-	i = 0;
+	i = number_len - 1;
 	if (nb == 0)
 	{
-		new_str[0] = ASCII_ZERO;
-		new_str[1] = '\0';
-		return ;
+		new_str[0] = '0';
 	}
-	if (nb < 0)
+	else if (nb < 0)
 	{
 		new_str[0] = '-';
-		i = 1;
-		nb = -nb;
+		nb *= -1;
 	}
 	while (nb != 0)
 	{
 		new_str[i] = (nb % 10) + ASCII_ZERO;
-		nb = nb / 10;
-		++i;
+		nb /= 10;
+		--i;
 	}
-	new_str[i] = '\0';
+	new_str[number_len] = '\0';
 }
 
 char	*ft_itoa(int n)
 {
-	size_t	final_len;
-	char	*new_str;
+	const size_t	number_len = get_number_len(n);
+	char			*new_str;
 
-	final_len = get_len_recursive(n, 0);
-	new_str = (char *)malloc(sizeof(char) * (final_len + 1));
-	if (new_str == NULL)
+	new_str = (char *)malloc(sizeof(char) * (number_len + 1));
+	if (new_str != NULL)
 	{
-		return (NULL);
+		fill_str_with_nbr(new_str, n, number_len);
 	}
-	ft_write_nbr(n, new_str);
-	ft_reverse_string(new_str);
 	return (new_str);
 }
-/*
+
 int	main(int ac, char **av)
 {
 	char	*new_str;
@@ -92,4 +59,3 @@ int	main(int ac, char **av)
 	printf("%zu\n", ft_strlen(new_str));
 	return (EXIT_SUCCESS);
 }
-*/
