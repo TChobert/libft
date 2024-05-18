@@ -1,5 +1,5 @@
 #include "libft.h"
-
+/*
 static char	*ft_strndup(char *s, size_t n)
 {
 	size_t	i;
@@ -7,35 +7,38 @@ static char	*ft_strndup(char *s, size_t n)
 
 	i = 0;
 	duplicated = (char *)malloc(sizeof(char) * (n + 1));
-	if (duplicated == NULL)
+	if (duplicated != NULL)
 	{
-		return (duplicated);
+		while (i < n && s[i] != '\0')
+		{
+			duplicated[i] = s[i];
+			++i;
+		}
+		duplicated[i] = '\0';
 	}
-	while (i < n)
-	{
-		duplicated[i] = s[i];
-		++i;
-	}
-	duplicated[i] = '\0';
 	return (duplicated);
 }
-
+*/
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*start_flag;
+	//char	*start_flag;
 	char	*substring;
 	size_t	s_len;
 
 	s_len = ft_strlen(s);
-	if (start >= s_len)
+	if (start + len > s_len)
 	{
-		return (NULL);
+		len = s_len - start;
 	}
-	start_flag = (char *)s + start;
-	substring = ft_strndup(start_flag, len);
-	if (substring == NULL)
+	if (start > s_len)
 	{
-		return (NULL);
+		return (ft_strdup(""));
+	}
+//	start_flag = (char *)s + (start);
+	substring = (char *)malloc(sizeof(char) * len + 1);
+	if (substring != NULL)
+	{
+		ft_strlcpy(substring, (char *)s + start, len + 1);
 	}
 	return (substring);
 }

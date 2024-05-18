@@ -48,7 +48,7 @@ char	*ft_itoa(int n)
 	}
 	return (new_str);
 }
-
+/*
 int	main(int ac, char **av)
 {
 	char	*new_str;
@@ -59,3 +59,4 @@ int	main(int ac, char **av)
 	printf("%zu\n", ft_strlen(new_str));
 	return (EXIT_SUCCESS);
 }
+*/

@@ -77,6 +77,7 @@ char	**ft_split(char const *s, char c)
 	char			**output;
 
 	i = 0;
+	j = 0;
 	current = (char *)s;
 	output = (char **)malloc(sizeof(char *) * (ft_substrings_count(s, c) + 1));
 	if (output == NULL)
