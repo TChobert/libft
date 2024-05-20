@@ -11,7 +11,7 @@ char	*ft_strchr(const char *s, int c)
 	occurence = NULL;
 	while (i < s_len)
 	{
-		if (s[i] == c)
+		if (s[i] == (char)c)
 		{
 			occurence = (char *)(s + i);
 			return (occurence);

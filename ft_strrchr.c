@@ -9,7 +9,7 @@ char	*ft_strrchr(const char *s, int c)
 	s_len = ft_strlen(s) + 1;
 	while (s_len > 0)
 	{
-		if (s[s_len - 1] == c)
+		if (s[s_len - 1] == (char)c)
 		{
 			occurence = (char *)(s + s_len - 1);
 			return (occurence);
@@ -27,5 +27,9 @@ int	main(int ac, char **av)
 	printf("true = %p\n", strrchr(av[1], atoi(av[2])));
 	printf("true = %s\n", strrchr(av[1], atoi(av[2])));
 	return (EXIT_SUCCESS);
+
+	char	s[] = "tripouille";
+	printf("%s\n", ft_strrchr(s, 't'));
+	return (0);
 }
 */
