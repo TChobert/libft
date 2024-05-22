@@ -1,38 +1,65 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strnstrv2.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tchobert <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/05/21 19:09:58 by tchobert          #+#    #+#             */
+/*   Updated: 2024/05/22 14:10:22 by tchobert         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
+
+static int	ft_strcmp(const char *s1, const char *s2)
+{
+	size_t	i;
+
+	i = 0;
+	while (s2[i] != '\0')
+	{
+		if (s1[i] != s2[i])
+			return (s1[i] - s2[i]);
+		++i;
+	}
+	return (0);
+}
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	size_t	little_len;
-	char	*output;
+	size_t			i;
+	size_t			little_len;
+	char			*occurence;
 
-	output = (char *)(big);
+	occurence = (char *)big;
 	little_len = ft_strlen(little);
-	if (little_len > len)
-		return (NULL);
 	if (*little == '\0')
+		return (occurence);
+	if (*big == '\0' || len == 0 || little_len > len)
+		return (NULL);
+	i = 0;
+	while (i <= len - little_len)
 	{
-		return (output);
-	}
-	while (*big != '\0' && len >= little_len)
-	{
-		if (ft_strncmp(big, little, len) == 0)
+		if (big[i] == *little)
 		{
-			return (output);
+			occurence = (char *)big + i;
+			if (ft_strcmp(big + i, little) == 0)
+			{
+				return (occurence);
+			}
 		}
-		++big;
-		--len;
+		++i;
 	}
 	return (NULL);
 }
 /*
-int	main(int ac, char **av)
+int	main(void)
 {
-	char	str1[] = "";
-	char	str2[] = "";
-	(void)ac;
-	(void)av;
-//	printf("%s\n", ft_strnstr(str1, str2, 3));
-	printf("%p\n", ft_strnstr(str1, str2, 3));
+	const char	big[] = "Hello World Warld";
+	const char	little[] = "Warld";
+
+	printf("%s\n", ft_strnstr(big, little, 17));
 	return (EXIT_SUCCESS);
 }
 */
