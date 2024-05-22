@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstrv2.c                                     :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tchobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 19:09:58 by tchobert          #+#    #+#             */
-/*   Updated: 2024/05/22 14:10:22 by tchobert         ###   ########.fr       */
+/*   Updated: 2024/05/22 14:15:35 by tchobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	occurence = (char *)big;
 	little_len = ft_strlen(little);
 	if (*little == '\0')
-		return (occurence);
+		return ((char *)big);
 	if (*big == '\0' || len == 0 || little_len > len)
 		return (NULL);
 	i = 0;
@@ -56,10 +56,10 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 /*
 int	main(void)
 {
-	const char	big[] = "Hello World Warld";
-	const char	little[] = "Warld";
+	const char	big[] = "AAAAA";
+	const char	little[] = "AAAA";
 
-	printf("%s\n", ft_strnstr(big, little, 17));
+	printf("%s\n", ft_strnstr(big, little, 0));
 	return (EXIT_SUCCESS);
 }
 */

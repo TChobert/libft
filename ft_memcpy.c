@@ -6,6 +6,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	t_byte			*current_dest;
 	size_t			i;
 
+	if(dest == NULL && src == NULL)
+		return (NULL);
 	i = 0;
 	current_dest = (t_byte *)dest;
 	while (i < n)
