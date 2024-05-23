@@ -1,102 +1,119 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split2.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tchobert <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/05/22 15:39:07 by tchobert          #+#    #+#             */
+/*   Updated: 2024/05/23 17:31:27 by tchobert         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-static bool	is_sep(char c, char sep)
+size_t	count_strs(const char *str, char sep)
 {
-	if (c == sep)
-		return (true);
-	else
-		return (false);
-}
+	size_t				i;
+	size_t				nb_strs;
+	bool				is_sep;
 
-static int	ft_substrings_count(char const *s, char c)
-{
-	size_t			i;
-	bool			is_in_substring;
-	unsigned int	substrings_count;
-
+	is_sep = true;
 	i = 0;
-	substrings_count = 0;
-	is_in_substring = false;
-	while (s[i] != '\0')
+	nb_strs = 0;
+	while (str[i] != '\0')
 	{
-		if (s[i] == c)
+		if (str[i] != sep && is_sep == true)
 		{
-			if (is_in_substring)
-			{
-				++substrings_count;
-				is_in_substring = false;
-			}
+			is_sep = false;
+			++nb_strs;
 		}
-		else
-			is_in_substring = true;
+		else if (str[i] == sep)
+		{
+			is_sep = true;
+		}
 		++i;
 	}
-	if (is_in_substring)
-		++substrings_count;
-	return (substrings_count);
+	return (nb_strs);
 }
 
-char	*ft_strcpy(char *s, size_t substrings_len)
+size_t	get_word_len(char const *s, char c)
 {
-	char	*new_str;
-	size_t	i;
+	size_t	len;
 
-	i = 0;
-	new_str = (char *)malloc(sizeof(char) * (substrings_len + 1));
-	if (new_str == NULL)
+	len = 0;
+	while (s[len] != c && s[len] != '\0')
 	{
-		return (NULL);
+		++len;
 	}
-	while (i < substrings_len)
-	{
-		new_str[i] = s[i];
-		++i;
-	}
-	new_str[i] = '\0';
-	return (new_str);
+	return (len);
 }
 
-static size_t	ft_get_substrings_len(char *s, char c)
+void	skip_separator(char const **s, char c)
 {
 	size_t	i;
 
 	i = 0;
-	while (is_sep(s[i], c) == false && s[i] != '\0')
+	while ((*s)[i] == c && (*s)[i] != '\0')
 	{
+		++(*s);
+	}
+}
+
+void	free_and_null(char ***output, size_t strs_number)
+{
+	size_t	i;
+
+	i = 0;
+	while (i < strs_number)
+	{
+		free(*output[i]);
+		*output[i] = NULL;
 		++i;
 	}
-	return (i);
+	*output = NULL;
 }
 
 char	**ft_split(char const *s, char c)
 {
+	const size_t	output_size = count_strs(s, c);
 	size_t			i;
-	size_t			j;
-	size_t			substrings_len;
-	char			*current;
+	size_t			word_len;
 	char			**output;
 
 	i = 0;
-	j = 0;
-	current = (char *)s;
-	output = (char **)malloc(sizeof(char *) * (ft_substrings_count(s, c) + 1));
-	if (output == NULL)
-		return (NULL);
-	while (s[i] != '\0')
+	output = (char **)malloc(sizeof(char *) * (output_size + 1));
+	if (output != NULL)
 	{
-		if (is_sep(s[i], c) == false)
+		output[output_size] = (NULL);
+		while (i < output_size)
 		{
-			substrings_len = ft_get_substrings_len(&current[i], c);
-			output[j++] = ft_strcpy(&current[i], substrings_len);
-			i += substrings_len;
-		}
-		else
+			skip_separator(&s, c);
+			word_len = get_word_len(s, c);
+			output[i] = ft_substr(s, 0, word_len);
+			if (output[i] == NULL)
+			{
+				free_and_null(&output, i);
+				return (NULL);
+			}
+			s += word_len;
 			++i;
+		}
 	}
-	output[j] = NULL;
 	return (output);
 }
+
 /*
+int main(void)
+{
+	char	test[] = "";
+	char	sep;
+
+	sep = 'U';
+	printf("%d\n", ft_count_words(test, sep));
+	return (EXIT_SUCCESS);
+}
+
 int	main(int ac, char **av)
 {
 	(void)ac;
