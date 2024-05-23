@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split2.c                                        :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tchobert <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: tchobert <tchobert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/22 15:39:07 by tchobert          #+#    #+#             */
-/*   Updated: 2024/05/23 17:31:27 by tchobert         ###   ########.fr       */
+/*   Created: 2024/05/21 18:03:01 by tchobert          #+#    #+#             */
+/*   Updated: 2024/05/23 19:19:36 by tchobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,18 +60,19 @@ void	skip_separator(char const **s, char c)
 	}
 }
 
-void	free_and_null(char ***output, size_t strs_number)
+void	free_and_null(char **output)
 {
 	size_t	i;
 
 	i = 0;
-	while (i < strs_number)
+	while (output[i] != NULL)
 	{
-		free(*output[i]);
-		*output[i] = NULL;
+		free(output[i]);
+		output[i] = NULL;
 		++i;
 	}
-	*output = NULL;
+	free(output);
+	output = NULL;
 }
 
 char	**ft_split(char const *s, char c)
@@ -93,7 +94,7 @@ char	**ft_split(char const *s, char c)
 			output[i] = ft_substr(s, 0, word_len);
 			if (output[i] == NULL)
 			{
-				free_and_null(&output, i);
+				free_and_null(output);
 				return (NULL);
 			}
 			s += word_len;
@@ -106,11 +107,16 @@ char	**ft_split(char const *s, char c)
 /*
 int main(void)
 {
-	char	test[] = "";
-	char	sep;
+	int i = 0;
+	char **output;
 
-	sep = 'U';
-	printf("%d\n", ft_count_words(test, sep));
+	output = ft_split("^^^1^^2a,^^^^3^^^^--h^^^^", '^');
+	while (output[i] != NULL)
+	{
+		printf("%s\n", output[i]);
+		++i;
+	}
+
 	return (EXIT_SUCCESS);
 }
 
