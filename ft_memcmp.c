@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tchobert <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/05/24 11:47:24 by tchobert          #+#    #+#             */
+/*   Updated: 2024/05/24 12:00:21 by tchobert         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	const t_byte	*current_s1 = (const t_byte *)s1;
 	const t_byte	*current_s2 = (const t_byte *)s2;
-	size_t	i;
+	size_t			i;
 
 	i = 0;
 	while (i < n)

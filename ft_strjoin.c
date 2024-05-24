@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tchobert <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/05/24 11:53:01 by tchobert          #+#    #+#             */
+/*   Updated: 2024/05/24 11:53:29 by tchobert         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 static void	ft_strcat(char *dest, const char *s1, const char *s2)
@@ -20,9 +32,6 @@ static void	ft_strcat(char *dest, const char *s1, const char *s2)
 	}
 	dest[i] = '\0';
 }
-
-// secu si dest pas assez grande ?
-// si S1 + S2 = vides ?
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
