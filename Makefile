@@ -10,26 +10,13 @@ CC := cc
 
 CFLAGS += -Wall
 CFLAGS += -Wextra 
-
-ifneq ($(NOERROR), true)
-	CFLAGS += -Werror
-endif
-
-ifeq ($(DEBUG), true)
-	DFLAGS += -g3
-	ifneq ($(NOSANITIZE), true)
-		DFLAGS += -fsanitize=address,undefined,leak
-	endif
-endif
-
+CFLAGS += -Werror
 
 AR := ar
 
 ARFLAGS := rcs
 
 ## SOURCES ##
-
-SRCS_DIR := .
 
 SRCS += ft_isalpha.c
 SRCS += ft_isdigit.c
@@ -66,19 +53,17 @@ SRCS += ft_putstr_fd.c
 SRCS += ft_putendl_fd.c
 SRCS += ft_putnbr_fd.c
 
-SRCS += ft_lstnew.c
-SRCS += ft_lstadd_front.c
-SRCS += ft_lstsize.c
-SRCS += ft_lstlast.c
-SRCS += ft_lstadd_back.c
-SRCS += ft_lstdelone.c
-SRCS += ft_lstclear.c
+## BONUS ##
 
-vpath %.c $(SRCS_DIR)
+BONUS += ft_lstnew_bonus.c
+BONUS += ft_lstadd_front_bonus.c
+BONUS += ft_lstsize_bonus.c
+BONUS += ft_lstlast_bonus.c
+BONUS += ft_lstadd_back_bonus.c
+BONUS += ft_lstdelone_bonus.c
+BONUS += ft_lstclear_bonus.c
 
 ## HEADERS ##
-
-INCLUDES_DIR := .
 
 HEADERS += libft.h
 
@@ -86,16 +71,11 @@ vpath %.h $(INCLUDES_DIR)
 
 ## OBJECTS ##
 
-OBJS_DIR := .
-
 OBJS := $(patsubst %.c, %.o, $(SRCS))
 
-##### HOOKS #####
+## OBJECTS BONUS ##
 
-GIT_ROOT_PATH := $(shell git rev-parse --show-toplevel)
-
-PREPUSH_FILE := $(GIT_ROOT_PATH)/.git/hooks/pre-push
-
+OBJS_BONUS := $(patsubst %.c, %.o, $(BONUS))
 
 ##### RULES #####
 
@@ -104,25 +84,21 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(AR) $(ARFLAGS) $@ $^
 
-$(OBJS): $(OBJS_DIR)/%.o: %.c $(HEADERS) | $(OBJS_DIR)  # pattern rule
-	$(CC) $(CFLAGS) $(DFLAGS) -c $< -o $@ -I $(INCLUDES_DIR)
+bonus: $(OBJS_BONUS)
+	$(AR) $(ARFLAGS) $(NAME) $^
 
-$(OBJS_DIR):
-	@mkdir $(OBJS_DIR) 2>/dev/null || true # 2 is an ionumber
+$(OBJS): %.o: %.c $(HEADERS)
+	$(CC) $(CFLAGS) -c $< -o $@ -I $(HEADERS)
+
+$(OBJS_BONUS): %.o: %.c $(HEADERS)
+	$(CC) $(CFALGS) -c $< -o $@ -I $(HEADERS)
 
 clean:
-	$(RM) $(OBJS)
-	@rmdir $(OBJS_DIR) 2>/dev/null || true
+	$(RM) $(OBJS) $(OBJS_BONUS)
 
 fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
 
-install-hooks: install-prepush-hooks
-
-install-prepush-hooks:
-	echo "norminette" > $(PREPUSH_FILE)
-	chmod +x $(PREPUSH_FILE)
-
-.PHONY: all clean fclean re install-hooks install-prepush-hooks
+.PHONY: all bonus clean fclean re
