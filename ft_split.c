@@ -6,13 +6,13 @@
 /*   By: tchobert <tchobert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 18:03:01 by tchobert          #+#    #+#             */
-/*   Updated: 2024/05/23 19:19:36 by tchobert         ###   ########.fr       */
+/*   Updated: 2024/05/25 12:20:05 by tchobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	count_strs(const char *str, char sep)
+static size_t	count_strs(const char *str, char sep)
 {
 	size_t				i;
 	size_t				nb_strs;
@@ -37,7 +37,7 @@ size_t	count_strs(const char *str, char sep)
 	return (nb_strs);
 }
 
-size_t	get_word_len(char const *s, char c)
+static size_t	get_word_len(char const *s, char c)
 {
 	size_t	len;
 
@@ -49,7 +49,7 @@ size_t	get_word_len(char const *s, char c)
 	return (len);
 }
 
-void	skip_separator(char const **s, char c)
+static void	skip_separator(char const **s, char c)
 {
 	size_t	i;
 
@@ -60,7 +60,7 @@ void	skip_separator(char const **s, char c)
 	}
 }
 
-void	free_and_null(char **output)
+static void	free_and_null(char **output)
 {
 	size_t	i;
 

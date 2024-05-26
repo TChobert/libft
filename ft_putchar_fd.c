@@ -6,7 +6,7 @@
 /*   By: tchobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 11:49:57 by tchobert          #+#    #+#             */
-/*   Updated: 2024/05/24 11:50:08 by tchobert         ###   ########.fr       */
+/*   Updated: 2024/05/25 13:17:04 by tchobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,3 @@ void	ft_putchar_fd(char c, int fd)
 {
 	write(fd, &c, sizeof(char));
 }
-
-// gestion erreurs ?

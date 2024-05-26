@@ -62,6 +62,8 @@ BONUS += ft_lstlast_bonus.c
 BONUS += ft_lstadd_back_bonus.c
 BONUS += ft_lstdelone_bonus.c
 BONUS += ft_lstclear_bonus.c
+BONUS += ft_lstiter_bonus.c
+BONUS += ft_lstmap_bonus.c
 
 ## HEADERS ##
 
@@ -84,7 +86,7 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(AR) $(ARFLAGS) $@ $^
 
-bonus: $(OBJS_BONUS)
+bonus: $(OBJS_BONUS) $(OBJS)
 	$(AR) $(ARFLAGS) $(NAME) $^
 
 $(OBJS): %.o: %.c $(HEADERS)
