@@ -6,7 +6,7 @@
 /*   By: tchobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 11:50:27 by tchobert          #+#    #+#             */
-/*   Updated: 2024/05/24 11:50:35 by tchobert         ###   ########.fr       */
+/*   Updated: 2024/05/27 14:17:27 by tchobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_putendl_fd(char *s, int fd)
 {
 	ft_putstr_fd(s, fd);
-	ft_putchar_fd(10, fd);
+	ft_putchar_fd('\n', fd);
 }
 /*
 int	main(int ac, char **av)
