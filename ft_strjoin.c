@@ -6,38 +6,24 @@
 /*   By: tchobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 11:53:01 by tchobert          #+#    #+#             */
-/*   Updated: 2024/05/24 11:53:29 by tchobert         ###   ########.fr       */
+/*   Updated: 2024/07/02 12:14:09 by tchobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	ft_strcat(char *dest, const char *s1, const char *s2)
-{
-	size_t	i;
-	size_t	j;
-
-	i = 0;
-	j = 0;
-	while (s1[i] != '\0')
-	{
-		dest[i] = s1[i];
-		++i;
-	}
-	while (s2[j] != '\0')
-	{
-		dest[i] = s2[j];
-		++j;
-		++i;
-	}
-	dest[i] = '\0';
-}
-
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t	final_len;
+	size_t	len_s1;
+	size_t	len_s2;
 	char	*str_joined;
-
+	
+	len_s1 = 0;
+	len_s2 = 0;
+	if (s1)
+		len_s1 = ft_strlen(s1);
+	if (s2)
+		len_s2 = ft_strlen(s2);
 	final_len = ft_strlen(s1) + ft_strlen(s2);
 	str_joined = (char *)malloc(sizeof(char) * (final_len + 1));
 	if (str_joined == NULL)

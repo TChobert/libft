@@ -1,40 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tchobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/24 11:52:13 by tchobert          #+#    #+#             */
-/*   Updated: 2024/07/02 12:15:37 by tchobert         ###   ########.fr       */
+/*   Created: 2024/07/02 12:12:13 by tchobert          #+#    #+#             */
+/*   Updated: 2024/07/02 12:13:06 by tchobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s)
+static void	ft_strcat(char *dest, const char *s1, const char *s2)
 {
-	char	*duplicated_str;
+	size_t	i;
+	size_t	j;
 
-	duplicated_str = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
-	if (duplicated_str != NULL)
+	i = 0;
+	j = 0;
+	while (s1[i] != '\0')
 	{
-		duplicated_str = ft_strcpy(duplicated_str, s);
+		dest[i] = s1[i];
+		++i;
 	}
-	return (duplicated_str);
-}
-
-/*
-int	main(int ac, char **av)
-{
-	(void)ac;
-	char	*ptr;
-	ptr = ft_strdup(av[1]);
-	if (ptr == NULL)
+	while (s2[j] != '\0')
 	{
-		return (-1);
+		dest[i] = s2[j];
+		++j;
+		++i;
 	}
-	printf("%s\n", ptr);
-	return (EXIT_SUCCESS);
+	dest[i] = '\0';
 }
-*/

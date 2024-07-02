@@ -37,6 +37,7 @@ SRCS += ft_strrchr.c
 SRCS += ft_strncmp.c
 SRCS += ft_memchr.c
 SRCS += ft_memcmp.c
+SRCS += ft_strcat.c
 SRCS += ft_strnstr.c
 SRCS += ft_atoi.c
 SRCS += ft_calloc.c
