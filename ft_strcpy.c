@@ -6,13 +6,13 @@
 /*   By: tchobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 12:14:49 by tchobert          #+#    #+#             */
-/*   Updated: 2024/07/02 12:15:15 by tchobert         ###   ########.fr       */
+/*   Updated: 2024/07/02 12:24:25 by tchobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char	*ft_strcpy(char *dest, const char *src)
+char	*ft_strcpy(char *dest, const char *src)
 {
 	size_t	i;
 

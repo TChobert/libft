@@ -42,6 +42,7 @@ SRCS += ft_strnstr.c
 SRCS += ft_atoi.c
 SRCS += ft_calloc.c
 SRCS += ft_strdup.c
+SRCS += ft_strcpy.c
 SRCS += ft_substr.c
 SRCS += ft_strjoin.c
 SRCS += ft_strtrim.c
