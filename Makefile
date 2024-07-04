@@ -50,10 +50,12 @@ SRCS += ft_split.c
 SRCS += ft_itoa.c
 SRCS += ft_strmapi.c
 SRCS += ft_striteri.c
+SRCS += ft_putchar.c
 SRCS += ft_putchar_fd.c
 SRCS += ft_putstr_fd.c
 SRCS += ft_putendl_fd.c
 SRCS += ft_putnbr_fd.c
+SRCS += ft_putnbr_hexa.c
 
 ## BONUS ##
 

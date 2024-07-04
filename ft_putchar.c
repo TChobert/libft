@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tchobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/24 11:49:57 by tchobert          #+#    #+#             */
-/*   Updated: 2024/07/04 16:51:08 by tchobert         ###   ########.fr       */
+/*   Created: 2024/07/04 16:48:15 by tchobert          #+#    #+#             */
+/*   Updated: 2024/07/04 16:50:26 by tchobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchar_fd(char c, int fd)
+void	ft_putchar(char c)
 {
-	write(fd, &c, sizeof(c));
+	write(STDOUT_FILENO, &c, sizeof(c));
 }
