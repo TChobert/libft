@@ -6,7 +6,7 @@
 /*   By: tchobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 19:29:51 by tchobert          #+#    #+#             */
-/*   Updated: 2024/07/05 19:20:48 by tchobert         ###   ########.fr       */
+/*   Updated: 2024/07/05 19:30:35 by tchobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ static void	fill_str_with_nbr(const char *base, char *new_str, long nb,
 	size_t	i;
 
 	i = number_len - 1;
-	new_str[i] = '\0';
+	new_str[number_len] = '\0';
 	if (nb == 0)
 	{
 		new_str[0] = '0';
@@ -66,14 +66,11 @@ static void	fill_str_with_nbr(const char *base, char *new_str, long nb,
 	{
 		new_str[0] = '-';
 		nb = -nb;
-		printf("nb = %ld\n", nb);
 	}
 	while (nb != 0)
 	{
 		new_str[i] = base[nb % base_size];
-		//printf("== %c\n", new_str[i]);
 		nb /= base_size;
-		//printf("nb est egal a :  %ld\n", nb);
 		--i;
 	}
 }
@@ -100,13 +97,17 @@ char	*ft_ltoa_base(long n, const char *base)
 int	main(int ac, char **av)
 {
 	char	*new_str;
-	char	*base = "0123456789abcdef";
+	char	*base = "0123456789";
 	(void)ac;
 	(void)av;
-	new_str = ft_ltoa_base(-1200, base);
-	printf("%s\n", new_str);
-//	printf("%zu\n", ft_strlen(new_str));
-	printf("%x\n", -1200);
+	new_str = ft_ltoa_base(-5, base);
+	if (new_str != NULL)
+	{
+		printf("%s\n", new_str);
+		printf("%zu\n", ft_strlen(new_str));
+	}
+	//printf("%x\n", -1200);
+	free(new_str);
 	return (EXIT_SUCCESS);
 }
 */
