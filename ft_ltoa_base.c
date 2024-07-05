@@ -6,7 +6,7 @@
 /*   By: tchobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 19:29:51 by tchobert          #+#    #+#             */
-/*   Updated: 2024/07/05 19:30:35 by tchobert         ###   ########.fr       */
+/*   Updated: 2024/07/05 19:31:48 by tchobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static size_t	get_number_len(long nb, size_t base_size)
 	size = (nb <= 0);
 	if (nb < 0)
 	{
-		nb *= - 1;
+		nb *= -1 ;
 	}
 	while (nb != 0)
 	{
