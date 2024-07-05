@@ -6,17 +6,37 @@
 /*   By: tchobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 19:29:51 by tchobert          #+#    #+#             */
-/*   Updated: 2024/07/05 19:31:48 by tchobert         ###   ########.fr       */
+/*   Updated: 2024/07/05 19:41:25 by tchobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static bool	is_base_alphanumeric(const char *base)
+{
+	size_t	i;
+
+	i = 0;
+	while (base[i] != '\0')
+	{
+		if (!ft_isalnum(base[i]))
+		{
+			return (false);
+		}
+		++i;
+	}
+	return (true);
+}
 
 static bool	check_base(const char *base)
 {
 	char	*first_parser;
 	char	*second_parser;
 
+	if (!is_base_alphanumeric(base))
+	{
+		return (false);
+	}
 	first_parser = (char *)base;
 	while (*first_parser != '\0')
 	{
@@ -93,6 +113,7 @@ char	*ft_ltoa_base(long n, const char *base)
 	}
 	return (new_str);
 }
+
 /*
 int	main(int ac, char **av)
 {
@@ -100,7 +121,7 @@ int	main(int ac, char **av)
 	char	*base = "0123456789";
 	(void)ac;
 	(void)av;
-	new_str = ft_ltoa_base(-5, base);
+	new_str = ft_ltoa_base(42, base);
 	if (new_str != NULL)
 	{
 		printf("%s\n", new_str);
