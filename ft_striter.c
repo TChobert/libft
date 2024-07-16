@@ -12,26 +12,22 @@
 
 #include "libft.h"
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+char	*ft_striter(char *s, int (*f)(int))
 {
 	size_t			i;
-	const size_t	output_len = ft_strlen(s);
-	char			*output;
 
-	i = 0;
-	output = (char *)malloc(sizeof(char) * (output_len + 1));
-	if (output == NULL)
+	if (s == NULL)
 	{
 		return (NULL);
 	}
-	while (i < output_len)
+	i = 0;
+	while (s[i] != '\0')
 	{
 		if (f != NULL)
 		{
-			output[i] = f(i, s[i]);
+			s[i] = f(s[i]);
 		}
 		++i;
 	}
-	output[i] = '\0';
-	return (output);
+	return (s);
 }
