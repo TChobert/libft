@@ -14,34 +14,18 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t	len_s1;
-	size_t	len_s2;
-	size_t	final_len;
 	char	*str_joined;
 
-	len_s1 = 0;
-	len_s2 = 0;
-	if (s1)
-		len_s1 = ft_strlen(s1);
-	if (s2)
-		len_s2 = ft_strlen(s2);
-	final_len = ft_strlen(s1) + ft_strlen(s2);
-	str_joined = (char *)malloc(sizeof(char) * (final_len + 1));
-	if (str_joined == NULL)
+	str_joined = NULL;
+	if (s1 != NULL && s2 != NULL)
 	{
-		return (NULL);
+		str_joined = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+		if (str_joined != NULL)
+			str_joined = ft_strcat(ft_strcpy(str_joined, s1), s2);
 	}
-	ft_strcat(str_joined, s1, s2);
+	else if (s1 != NULL)
+		str_joined = ft_strdup(s1);
+	else if (s2 != NULL)
+		str_joined = ft_strdup(s2);
 	return (str_joined);
 }
-/*
-int	main(int ac, char **av)
-{
-	(void)ac;
-	char	*joined;
-	joined = ft_strjoin(av[1], av[2]);
-	printf("%s\n", joined);
-	printf("%p\n", joined);
-	return (EXIT_SUCCESS);
-}
-*/

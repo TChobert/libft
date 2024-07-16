@@ -12,23 +12,9 @@
 
 #include "libft.h"
 
-void	ft_strcat(char *dest, const char *s1, const char *s2)
+char	*ft_strcat(char *dest, const char *src)
 {
-	size_t	i;
-	size_t	j;
-
-	i = 0;
-	j = 0;
-	while (s1[i] != '\0')
-	{
-		dest[i] = s1[i];
-		++i;
-	}
-	while (s2[j] != '\0')
-	{
-		dest[i] = s2[j];
-		++j;
-		++i;
-	}
-	dest[i] = '\0';
+	ft_strcpy(dest + ft_strlen(dest), src);
+	return (dest);
 }
+
