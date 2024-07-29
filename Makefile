@@ -11,7 +11,7 @@ CC := cc
 CFLAGS += -Wall
 CFLAGS += -Wextra 
 CFLAGS += -Werror
-// CFLAGS += -fsanitize=address,undefined -g3
+# CFLAGS += -fsanitize=address,undefined -g3
 
 AR := ar
 
@@ -49,6 +49,9 @@ SRCS += ft_substr.c
 SRCS += ft_strjoin.c
 SRCS += ft_strtrim.c
 SRCS += ft_split.c
+SRCS += ft_sswap.c
+SRCS += ft_swap_int.c
+SRCS += ft_swap_char.c
 SRCS += ft_itoa.c
 SRCS += ft_ltoa_base.c
 SRCS += ft_ultoa_base.c

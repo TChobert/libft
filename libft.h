@@ -6,7 +6,7 @@
 /*   By: tchobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 12:07:13 by tchobert          #+#    #+#             */
-/*   Updated: 2024/07/05 17:11:28 by tchobert         ###   ########.fr       */
+/*   Updated: 2024/07/29 15:36:28 by tchobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split(char const *s, char c);
+void	ft_sswap(void *a, void *b, size_t size);
+void	ft_swap_int(int *a, int *b);
+void	ft_swap_char(char *a, char *b);
 char	*ft_itoa(int n);
 char	*ft_ltoa_base(long n, const char *base);
 char	*ft_ultoa_base(unsigned long n, const char *base);
