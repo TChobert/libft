@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tchobert <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: tchobert <tchobert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 12:07:13 by tchobert          #+#    #+#             */
-/*   Updated: 2024/07/29 15:36:28 by tchobert         ###   ########.fr       */
+/*   Updated: 2024/08/02 18:44:20 by tchobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	ft_bzero(void *s, size_t n);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
 void	*ft_memmove(void *dest, const void *src, size_t n);
 void	*ft_memjoin(void const *m1, void const *m2,
-	 const size_t len_m1, const size_t len_m2);
+			const size_t len_m1, const size_t len_m2);
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
 int		ft_toupper(int c);
@@ -72,7 +72,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split(char const *s, char c);
-void	ft_sswap(void *a, void *b, size_t size);
 void	ft_swap_int(int *a, int *b);
 void	ft_swap_char(char *a, char *b);
 char	*ft_itoa(int n);
@@ -80,13 +79,14 @@ char	*ft_ltoa_base(long n, const char *base);
 char	*ft_ultoa_base(unsigned long n, const char *base);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
-char 	*ft_striter(char *s, int (*f)(int));
+char	*ft_striter(char *s, int (*f)(int));
 void	ft_putchar(char c);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 void	ft_putnbr_hexa(unsigned long nb);
+size_t	ft_count_words(const char *str, char sep);
 
 // BONUS PART :
 

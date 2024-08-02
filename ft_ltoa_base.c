@@ -6,7 +6,7 @@
 /*   By: tchobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 19:29:51 by tchobert          #+#    #+#             */
-/*   Updated: 2024/07/05 19:41:25 by tchobert         ###   ########.fr       */
+/*   Updated: 2024/08/02 18:41:05 by tchobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,9 +72,10 @@ static size_t	get_number_len(long nb, size_t base_size)
 }
 
 static void	fill_str_with_nbr(const char *base, char *new_str, long nb,
-								const size_t number_len, const size_t base_size)
+								const size_t number_len)
 {
-	size_t	i;
+	const size_t	base_size = ft_strlen(base);
+	size_t			i;
 
 	i = number_len - 1;
 	new_str[number_len] = '\0';

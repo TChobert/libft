@@ -6,36 +6,11 @@
 /*   By: tchobert <tchobert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 18:03:01 by tchobert          #+#    #+#             */
-/*   Updated: 2024/05/25 12:20:05 by tchobert         ###   ########.fr       */
+/*   Updated: 2024/07/31 18:13:13 by tchobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static size_t	count_strs(const char *str, char sep)
-{
-	size_t				i;
-	size_t				nb_strs;
-	bool				is_sep;
-
-	is_sep = true;
-	i = 0;
-	nb_strs = 0;
-	while (str[i] != '\0')
-	{
-		if (str[i] != sep && is_sep == true)
-		{
-			is_sep = false;
-			++nb_strs;
-		}
-		else if (str[i] == sep)
-		{
-			is_sep = true;
-		}
-		++i;
-	}
-	return (nb_strs);
-}
 
 static size_t	get_word_len(char const *s, char c)
 {
@@ -77,7 +52,7 @@ static void	free_and_null(char **output)
 
 char	**ft_split(char const *s, char c)
 {
-	const size_t	output_size = count_strs(s, c);
+	const size_t	output_size = ft_count_words(s, c);
 	size_t			i;
 	size_t			word_len;
 	char			**output;
