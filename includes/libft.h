@@ -6,7 +6,7 @@
 /*   By: tchobert <tchobert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 12:07:13 by tchobert          #+#    #+#             */
-/*   Updated: 2024/08/05 14:32:10 by tchobert         ###   ########.fr       */
+/*   Updated: 2024/08/05 19:10:41 by tchobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,6 +93,7 @@ size_t	ft_count_words(const char *str, char sep);
 void	ft_strncpy(char *dest, const char *src, size_t size);
 char	*ft_strndup(const char *src, size_t size);
 char	*ft_strnjoin(char *s1, char *s2, size_t max);
+void	ft_free_and_null(char **strs_array);
 
 
 // BONUS PART :

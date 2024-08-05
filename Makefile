@@ -81,6 +81,7 @@ SRCS += $(SRCS_DIR)/ft_lstmap.c
 SRCS += $(SRCS_DIR)/ft_strndup.c
 SRCS += $(SRCS_DIR)/ft_strncpy.c
 SRCS += $(SRCS_DIR)/ft_strnjoin.c
+SRCS += $(SRCS_DIR)/ft_free_and_null.c
 
 # PRINTF #
 
