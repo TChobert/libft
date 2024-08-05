@@ -6,7 +6,7 @@
 /*   By: tchobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 19:29:51 by tchobert          #+#    #+#             */
-/*   Updated: 2024/08/02 18:40:14 by tchobert         ###   ########.fr       */
+/*   Updated: 2024/08/05 14:03:32 by tchobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,7 +101,7 @@ char	*ft_ultoa_base(unsigned long n, const char *base)
 	new_str = (char *)malloc(sizeof(char) * (number_len + 1));
 	if (new_str != NULL)
 	{
-		fill_str_with_nbr(base, new_str, n, number_len, base_size);
+		fill_str_with_nbr(base, new_str, n, number_len);
 	}
 	return (new_str);
 }

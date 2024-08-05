@@ -6,7 +6,7 @@
 /*   By: tchobert <tchobert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 12:07:13 by tchobert          #+#    #+#             */
-/*   Updated: 2024/08/02 18:44:20 by tchobert         ###   ########.fr       */
+/*   Updated: 2024/08/05 14:32:10 by tchobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 # define LIBFT_H
 
 // INCLUDES --------------------------------------------------------------------
+
+#include "ft_printf.h"
+#include "get_next_line.h"
 
 # include <stdint.h>
 # include <unistd.h>
@@ -87,6 +90,10 @@ void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 void	ft_putnbr_hexa(unsigned long nb);
 size_t	ft_count_words(const char *str, char sep);
+void	ft_strncpy(char *dest, const char *src, size_t size);
+char	*ft_strndup(const char *src, size_t size);
+char	*ft_strnjoin(char *s1, char *s2, size_t max);
+
 
 // BONUS PART :
 

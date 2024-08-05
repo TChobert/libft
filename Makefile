@@ -11,6 +11,7 @@ CC := cc
 CFLAGS += -Wall
 CFLAGS += -Wextra
 CFLAGS += -Werror
+CFLAGS += -Iincludes
 # CFLAGS += -fsanitize=address,undefined -g3
 
 AR := ar
@@ -19,67 +20,93 @@ ARFLAGS := rcs
 
 ## SOURCES ##
 
-SRCS += ft_isalpha.c
-SRCS += ft_isdigit.c
-SRCS += ft_isalnum.c
-SRCS += ft_isascii.c
-SRCS += ft_isprint.c
-SRCS += ft_strlen.c
-SRCS += ft_memset.c
-SRCS += ft_bzero.c
-SRCS += ft_memcpy.c
-SRCS += ft_memmove.c
-SRCS += ft_memjoin.c
-SRCS += ft_strlcpy.c
-SRCS += ft_strlcat.c
-SRCS += ft_toupper.c
-SRCS += ft_tolower.c
-SRCS += ft_strchr.c
-SRCS += ft_strrchr.c
-SRCS += ft_strncmp.c
-SRCS += ft_memchr.c
-SRCS += ft_memcmp.c
-SRCS += ft_strcat.c
-SRCS += ft_strnstr.c
-SRCS += ft_atoi.c
-SRCS += ft_calloc.c
-SRCS += ft_strdup.c
-SRCS += ft_strcpy.c
-SRCS += ft_substr.c
-SRCS += ft_strjoin.c
-SRCS += ft_strtrim.c
-SRCS += ft_split.c
-SRCS += ft_swap_int.c
-SRCS += ft_swap_char.c
-SRCS += ft_itoa.c
-SRCS += ft_ltoa_base.c
-SRCS += ft_ultoa_base.c
-SRCS += ft_strmapi.c
-SRCS += ft_striteri.c
-SRCS += ft_striter.c
-SRCS += ft_putchar.c
-SRCS += ft_putchar_fd.c
-SRCS += ft_putstr_fd.c
-SRCS += ft_putendl_fd.c
-SRCS += ft_putnbr_fd.c
-SRCS += ft_putnbr_hexa.c
-SRCS += ft_count_words.c
+SRCS_DIR += sources
+PRINTF_DIR += ft_printf
+GNL_DIR += get_next_line
 
-## BONUS ##
+SRCS += $(SRCS_DIR)/ft_isalpha.c
+SRCS += $(SRCS_DIR)/ft_isdigit.c
+SRCS += $(SRCS_DIR)/ft_isalnum.c
+SRCS += $(SRCS_DIR)/ft_isascii.c
+SRCS += $(SRCS_DIR)/ft_isprint.c
+SRCS += $(SRCS_DIR)/ft_strlen.c
+SRCS += $(SRCS_DIR)/ft_memset.c
+SRCS += $(SRCS_DIR)/ft_bzero.c
+SRCS += $(SRCS_DIR)/ft_memcpy.c
+SRCS += $(SRCS_DIR)/ft_memmove.c
+SRCS += $(SRCS_DIR)/ft_memjoin.c
+SRCS += $(SRCS_DIR)/ft_strlcpy.c
+SRCS += $(SRCS_DIR)/ft_strlcat.c
+SRCS += $(SRCS_DIR)/ft_toupper.c
+SRCS += $(SRCS_DIR)/ft_tolower.c
+SRCS += $(SRCS_DIR)/ft_strchr.c
+SRCS += $(SRCS_DIR)/ft_strrchr.c
+SRCS += $(SRCS_DIR)/ft_strncmp.c
+SRCS += $(SRCS_DIR)/ft_memchr.c
+SRCS += $(SRCS_DIR)/ft_memcmp.c
+SRCS += $(SRCS_DIR)/ft_strcat.c
+SRCS += $(SRCS_DIR)/ft_strnstr.c
+SRCS += $(SRCS_DIR)/ft_atoi.c
+SRCS += $(SRCS_DIR)/ft_calloc.c
+SRCS += $(SRCS_DIR)/ft_strdup.c
+SRCS += $(SRCS_DIR)/ft_strcpy.c
+SRCS += $(SRCS_DIR)/ft_substr.c
+SRCS += $(SRCS_DIR)/ft_strjoin.c
+SRCS += $(SRCS_DIR)/ft_strtrim.c
+SRCS += $(SRCS_DIR)/ft_split.c
+SRCS += $(SRCS_DIR)/ft_swap_int.c
+SRCS += $(SRCS_DIR)/ft_swap_char.c
+SRCS += $(SRCS_DIR)/ft_itoa.c
+SRCS += $(SRCS_DIR)/ft_ltoa_base.c
+SRCS += $(SRCS_DIR)/ft_ultoa_base.c
+SRCS += $(SRCS_DIR)/ft_strmapi.c
+SRCS += $(SRCS_DIR)/ft_striteri.c
+SRCS += $(SRCS_DIR)/ft_striter.c
+SRCS += $(SRCS_DIR)/ft_putchar.c
+SRCS += $(SRCS_DIR)/ft_putchar_fd.c
+SRCS += $(SRCS_DIR)/ft_putstr_fd.c
+SRCS += $(SRCS_DIR)/ft_putendl_fd.c
+SRCS += $(SRCS_DIR)/ft_putnbr_fd.c
+SRCS += $(SRCS_DIR)/ft_putnbr_hexa.c
+SRCS += $(SRCS_DIR)/ft_count_words.c
+SRCS += $(SRCS_DIR)/ft_lstnew.c
+SRCS += $(SRCS_DIR)/ft_lstadd_front.c
+SRCS += $(SRCS_DIR)/ft_lstsize.c
+SRCS += $(SRCS_DIR)/ft_lstlast.c
+SRCS += $(SRCS_DIR)/ft_lstadd_back.c
+SRCS += $(SRCS_DIR)/ft_lstdelone.c
+SRCS += $(SRCS_DIR)/ft_lstclear.c
+SRCS += $(SRCS_DIR)/ft_lstiter.c
+SRCS += $(SRCS_DIR)/ft_lstmap.c
+SRCS += $(SRCS_DIR)/ft_strndup.c
+SRCS += $(SRCS_DIR)/ft_strncpy.c
+SRCS += $(SRCS_DIR)/ft_strnjoin.c
 
-BONUS += ft_lstnew_bonus.c
-BONUS += ft_lstadd_front_bonus.c
-BONUS += ft_lstsize_bonus.c
-BONUS += ft_lstlast_bonus.c
-BONUS += ft_lstadd_back_bonus.c
-BONUS += ft_lstdelone_bonus.c
-BONUS += ft_lstclear_bonus.c
-BONUS += ft_lstiter_bonus.c
-BONUS += ft_lstmap_bonus.c
+# PRINTF #
+
+SRCS += $(PRINTF_DIR)/ft_printf.c
+SRCS += $(PRINTF_DIR)/address_converters.c
+SRCS += $(PRINTF_DIR)/build_formated_string.c
+SRCS += $(PRINTF_DIR)/char_converters.c
+SRCS += $(PRINTF_DIR)/converter_manager.c
+SRCS += $(PRINTF_DIR)/converter_utils.c
+SRCS += $(PRINTF_DIR)/flag_manager.c
+SRCS += $(PRINTF_DIR)/numeric_converters.c
+SRCS += $(PRINTF_DIR)/state_machine.c
+SRCS += $(PRINTF_DIR)/state_machine_utils.c
+SRCS += $(PRINTF_DIR)/string_utils.c
+SRCS += $(PRINTF_DIR)/virtuals_printf.c
+
+# GET NEXT LINE #
+
+SRCS += $(GNL_DIR)/get_next_line.c
+SRCS += $(GNL_DIR)/get_next_line_utils.c
 
 ## HEADERS ##
 
-HEADERS += libft.h
+HEADERS_DIR += includes
+
+HEADERS += $(HEADERS_DIR)/libft.h
 
 vpath %.h $(INCLUDES_DIR)
 
@@ -98,14 +125,8 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(AR) $(ARFLAGS) $@ $^
 
-bonus: $(OBJS_BONUS) $(OBJS)
-	$(AR) $(ARFLAGS) $(NAME) $^
-
 $(OBJS): %.o: %.c $(HEADERS)
 	$(CC) $(CFLAGS) -c $< -o $@ -I $(HEADERS)
-
-$(OBJS_BONUS): %.o: %.c $(HEADERS)
-	$(CC) $(CFALGS) -c $< -o $@ -I $(HEADERS)
 
 clean:
 	$(RM) $(OBJS) $(OBJS_BONUS)
@@ -115,4 +136,5 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all bonus clean fclean re
+.PHONY: all clean fclean re
+
