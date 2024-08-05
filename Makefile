@@ -47,6 +47,7 @@ SRCS += $(SRCS_DIR)/ft_memcmp.c
 SRCS += $(SRCS_DIR)/ft_strcat.c
 SRCS += $(SRCS_DIR)/ft_strnstr.c
 SRCS += $(SRCS_DIR)/ft_atoi.c
+SRCS += $(SRCS_DIR)/ft_atol.c
 SRCS += $(SRCS_DIR)/ft_calloc.c
 SRCS += $(SRCS_DIR)/ft_strdup.c
 SRCS += $(SRCS_DIR)/ft_strcpy.c
