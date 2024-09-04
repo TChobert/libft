@@ -6,7 +6,7 @@
 /*   By: tchobert <tchobert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 12:07:13 by tchobert          #+#    #+#             */
-/*   Updated: 2024/08/05 19:21:23 by tchobert         ###   ########.fr       */
+/*   Updated: 2024/09/04 15:17:56 by tchobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,6 +95,7 @@ void	ft_strncpy(char *dest, const char *src, size_t size);
 char	*ft_strndup(const char *src, size_t size);
 char	*ft_strnjoin(char *s1, char *s2, size_t max);
 void	ft_free_and_null(char **strs_array);
+void	ft_swap_long(long *a, long *b);
 
 
 // BONUS PART :
