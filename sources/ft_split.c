@@ -6,7 +6,7 @@
 /*   By: tchobert <tchobert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 18:03:01 by tchobert          #+#    #+#             */
-/*   Updated: 2024/07/31 18:13:13 by tchobert         ###   ########.fr       */
+/*   Updated: 2024/09/04 14:34:10 by tchobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,21 +35,6 @@ static void	skip_separator(char const **s, char c)
 	}
 }
 
-static void	free_and_null(char **output)
-{
-	size_t	i;
-
-	i = 0;
-	while (output[i] != NULL)
-	{
-		free(output[i]);
-		output[i] = NULL;
-		++i;
-	}
-	free(output);
-	output = NULL;
-}
-
 char	**ft_split(char const *s, char c)
 {
 	const size_t	output_size = ft_count_words(s, c);
@@ -69,7 +54,7 @@ char	**ft_split(char const *s, char c)
 			output[i] = ft_substr(s, 0, word_len);
 			if (output[i] == NULL)
 			{
-				free_and_null(output);
+				ft_free_and_null(output);
 				return (NULL);
 			}
 			s += word_len;
@@ -79,35 +64,35 @@ char	**ft_split(char const *s, char c)
 	return (output);
 }
 
-/*
-int main(void)
-{
-	int i = 0;
-	char **output;
 
-	output = ft_split("^^^1^^2a,^^^^3^^^^--h^^^^", '^');
-	while (output[i] != NULL)
-	{
-		printf("%s\n", output[i]);
-		++i;
-	}
+// int main(void)
+// {
+// 	int i = 0;
+// 	char **output;
 
-	return (EXIT_SUCCESS);
-}
+// 	output = ft_split("^^^1^^2a,^^^^3^^^^--h^^^^", '^');
+// 	while (output[i] != NULL)
+// 	{
+// 		printf("%s\n", output[i]);
+// 		++i;
+// 	}
 
-int	main(int ac, char **av)
-{
-	(void)ac;
-	size_t	i;
-	char	**splitted;
+// 	return (EXIT_SUCCESS);
+// }
 
-	i = 0;
-	splitted = ft_split(av[1], av[2][0]);
-	while (splitted[i] != NULL)
-	{
-		printf("%s\n", splitted[i]);
-		++i;
-	}
-	return (EXIT_SUCCESS);
-}
-*/
+// int	main(int ac, char **av)
+// {
+// 	(void)ac;
+// 	size_t	i;
+// 	char	**splitted;
+
+// 	i = 0;
+// 	splitted = ft_split(av[1], av[2][0]);
+// 	while (splitted[i] != NULL)
+// 	{
+// 		printf("%s\n", splitted[i]);
+// 		++i;
+// 	}
+// 	return (EXIT_SUCCESS);
+// }
+
