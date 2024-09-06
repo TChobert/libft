@@ -84,6 +84,7 @@ SRCS += $(SRCS_DIR)/ft_strncpy.c
 SRCS += $(SRCS_DIR)/ft_strnjoin.c
 SRCS += $(SRCS_DIR)/ft_free_and_null.c
 SRCS += $(SRCS_DIR)/ft_swap_long.c
+SRCS += $(SRCS_DIR)/ft_atoi_base.c
 
 # PRINTF #
 
