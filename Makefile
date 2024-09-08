@@ -54,6 +54,7 @@ SRCS += $(SRCS_DIR)/ft_strcpy.c
 SRCS += $(SRCS_DIR)/ft_substr.c
 SRCS += $(SRCS_DIR)/ft_strjoin.c
 SRCS += $(SRCS_DIR)/ft_strtrim.c
+SRCS += $(SRCS_DIR)/ft_split_char_set.c
 SRCS += $(SRCS_DIR)/ft_split.c
 SRCS += $(SRCS_DIR)/ft_swap_int.c
 SRCS += $(SRCS_DIR)/ft_swap_char.c
