@@ -54,7 +54,7 @@ SRCS += $(SRCS_DIR)/ft_strcpy.c
 SRCS += $(SRCS_DIR)/ft_substr.c
 SRCS += $(SRCS_DIR)/ft_strjoin.c
 SRCS += $(SRCS_DIR)/ft_strtrim.c
-SRCS += $(SRCS_DIR)/ft_split_char_set.c
+SRCS += $(SRCS_DIR)/ft_split_charset.c
 SRCS += $(SRCS_DIR)/ft_split.c
 SRCS += $(SRCS_DIR)/ft_swap_int.c
 SRCS += $(SRCS_DIR)/ft_swap_char.c
@@ -86,6 +86,7 @@ SRCS += $(SRCS_DIR)/ft_strnjoin.c
 SRCS += $(SRCS_DIR)/ft_free_and_null.c
 SRCS += $(SRCS_DIR)/ft_swap_long.c
 SRCS += $(SRCS_DIR)/ft_atoi_base.c
+SRCS += $(SRCS_DIR)/ft_getenv.c
 
 # PRINTF #
 

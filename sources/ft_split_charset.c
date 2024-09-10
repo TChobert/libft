@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split_char_set.c                                :+:      :+:    :+:   */
+/*   ft_split_charset.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tchobert <tchobert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 14:29:20 by tchobert          #+#    #+#             */
-/*   Updated: 2024/09/08 14:55:37 by tchobert         ###   ########.fr       */
+/*   Updated: 2024/09/08 16:16:01 by tchobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static bool	is_in_charset(const char c, char *charset)
 	return (false);
 }
 
-size_t	ft_count_words_charset(const char *str, char *charset)
+static size_t	ft_count_words_charset(const char *str, char *charset)
 {
 	size_t				i;
 	size_t				nb_words;

@@ -6,7 +6,7 @@
 /*   By: tchobert <tchobert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 12:07:13 by tchobert          #+#    #+#             */
-/*   Updated: 2024/09/08 14:41:56 by tchobert         ###   ########.fr       */
+/*   Updated: 2024/09/08 16:16:41 by tchobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ char	*ft_strdup(const char *s);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
-char	**ft_split_char_set(char const *s, char* char_set);
+char	**ft_split_charset(char const *s, char *charset);
 char	**ft_split(char const *s, char c);
 void	ft_swap_int(int *a, int *b);
 void	ft_swap_char(char *a, char *b);
@@ -98,6 +98,7 @@ char	*ft_strnjoin(char *s1, char *s2, size_t max);
 void	ft_free_and_null(char **strs_array);
 void	ft_swap_long(long *a, long *b);
 int		ft_atoi_base(const char *nb, unsigned int base);
+char	*ft_getenv(char *key, char **env);
 
 
 // BONUS PART :
