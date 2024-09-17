@@ -6,23 +6,11 @@
 /*   By: tchobert <tchobert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 14:54:00 by tchobert          #+#    #+#             */
-/*   Updated: 2024/06/05 12:22:46 by tchobert         ###   ########.fr       */
+/*   Updated: 2024/09/17 14:12:05 by tchobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-
-size_t	ft_strlen(const char *str)
-{
-	size_t	size;
-
-	size = 0;
-	while (str[size] != '\0')
-	{
-		++size;
-	}
-	return (size);
-}
 
 char	*ft_strchr(const char *str, int c)
 {

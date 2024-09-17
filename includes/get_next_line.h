@@ -6,7 +6,7 @@
 /*   By: tchobert <tchobert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 18:11:46 by tchobert          #+#    #+#             */
-/*   Updated: 2024/08/05 14:39:50 by tchobert         ###   ########.fr       */
+/*   Updated: 2024/09/17 14:15:39 by tchobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@
 # include <stdlib.h>
 # include <string.h>
 # include <fcntl.h>
+
+#include "libft.h"
 
 // DEFINES //
 
