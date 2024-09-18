@@ -6,25 +6,11 @@
 /*   By: tchobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 19:09:58 by tchobert          #+#    #+#             */
-/*   Updated: 2024/05/22 14:15:35 by tchobert         ###   ########.fr       */
+/*   Updated: 2024/09/18 13:58:38 by tchobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static int	ft_strcmp(const char *s1, const char *s2)
-{
-	size_t	i;
-
-	i = 0;
-	while (s2[i] != '\0')
-	{
-		if (s1[i] != s2[i])
-			return (s1[i] - s2[i]);
-		++i;
-	}
-	return (0);
-}
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {

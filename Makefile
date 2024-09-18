@@ -41,6 +41,7 @@ SRCS += $(SRCS_DIR)/ft_toupper.c
 SRCS += $(SRCS_DIR)/ft_tolower.c
 SRCS += $(SRCS_DIR)/ft_strchr.c
 SRCS += $(SRCS_DIR)/ft_strrchr.c
+SRCS += $(SRCS_DIR)/ft_strcmp.c
 SRCS += $(SRCS_DIR)/ft_strncmp.c
 SRCS += $(SRCS_DIR)/ft_memchr.c
 SRCS += $(SRCS_DIR)/ft_memcmp.c
