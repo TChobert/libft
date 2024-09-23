@@ -88,6 +88,7 @@ SRCS += $(SRCS_DIR)/ft_free_and_null.c
 SRCS += $(SRCS_DIR)/ft_swap_long.c
 SRCS += $(SRCS_DIR)/ft_atoi_base.c
 SRCS += $(SRCS_DIR)/ft_getenv.c
+SRCS += $(SRCS_DIR)/ft_display_strs_array.c
 
 # PRINTF #
 
