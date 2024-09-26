@@ -6,7 +6,7 @@
 /*   By: tchobert <tchobert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 14:29:20 by tchobert          #+#    #+#             */
-/*   Updated: 2024/09/08 16:16:01 by tchobert         ###   ########.fr       */
+/*   Updated: 2024/09/26 14:18:17 by tchobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,7 @@ char	**ft_split_charset(char const *s, char *charset)
 	}
 	return (output);
 }
-
+/*
 int main(void)
 {
 	int i = 0;
@@ -118,18 +118,19 @@ int main(void)
 	return (EXIT_SUCCESS);
 }
 
-// int	main(int ac, char **av)
-// {
-// 	(void)ac;
-// 	size_t	i;
-// 	char	**splitted;
+int	main(int ac, char **av)
+{
+ 	(void)ac;
+ 	size_t	i;
+ 	char	**splitted;
 
-// 	i = 0;
-// 	splitted = ft_split(av[1], av[2][0]);
-// 	while (splitted[i] != NULL)
-// 	{
-// 		printf("%s\n", splitted[i]);
-// 		++i;
-// 	}
-// 	return (EXIT_SUCCESS);
-// }
+ 	i = 0;
+ 	splitted = ft_split(av[1], av[2][0]);
+ 	while (splitted[i] != NULL)
+	{
+		printf("%s\n", splitted[i]);
+		++i;
+ 	}
+ 	return (EXIT_SUCCESS);
+}
+*/
