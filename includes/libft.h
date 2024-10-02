@@ -6,7 +6,7 @@
 /*   By: tchobert <tchobert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 12:07:13 by tchobert          #+#    #+#             */
-/*   Updated: 2024/09/23 16:31:42 by tchobert         ###   ########.fr       */
+/*   Updated: 2024/10/02 15:07:54 by tchobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 // INCLUDES --------------------------------------------------------------------
 
-#include "ft_printf.h"
-#include "get_next_line.h"
+# include "ft_printf.h"
+# include "get_next_line.h"
 
 # include <stdint.h>
 # include <unistd.h>
@@ -101,7 +101,6 @@ void	ft_swap_long(long *a, long *b);
 int		ft_atoi_base(const char *nb, unsigned int base);
 char	*ft_getenv(char *key, char **env);
 void	ft_display_strs_array(char **array, int fd);
-
 
 // BONUS PART :
 

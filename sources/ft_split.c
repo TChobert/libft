@@ -6,7 +6,7 @@
 /*   By: tchobert <tchobert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 18:03:01 by tchobert          #+#    #+#             */
-/*   Updated: 2024/09/04 14:34:10 by tchobert         ###   ########.fr       */
+/*   Updated: 2024/10/02 15:09:45 by tchobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,6 @@ char	**ft_split(char const *s, char c)
 	return (output);
 }
 
-
 // int main(void)
 // {
 // 	int i = 0;
@@ -95,4 +94,3 @@ char	**ft_split(char const *s, char c)
 // 	}
 // 	return (EXIT_SUCCESS);
 // }
-

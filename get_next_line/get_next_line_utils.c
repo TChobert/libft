@@ -6,7 +6,7 @@
 /*   By: tchobert <tchobert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 14:54:00 by tchobert          #+#    #+#             */
-/*   Updated: 2024/09/17 14:12:05 by tchobert         ###   ########.fr       */
+/*   Updated: 2024/10/02 15:06:49 by tchobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,3 @@ char	*ft_strchr(const char *str, int c)
 	}
 	return (NULL);
 }
-
-

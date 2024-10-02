@@ -6,7 +6,7 @@
 /*   By: tchobert <tchobert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 16:11:58 by tchobert          #+#    #+#             */
-/*   Updated: 2024/09/08 16:13:45 by tchobert         ###   ########.fr       */
+/*   Updated: 2024/10/02 15:10:22 by tchobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 static char	*cut_key(char *env_str)
 {
-	const char key_value_sep = '=';
-	size_t						i;
-	char						*output;
+	const char	key_value_sep = '=';
+	size_t		i;
+	char		*output;
 
 	i = 0;
 	while (env_str[i] != key_value_sep)

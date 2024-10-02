@@ -6,7 +6,7 @@
 /*   By: tchobert <tchobert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 14:29:20 by tchobert          #+#    #+#             */
-/*   Updated: 2024/09/26 14:18:17 by tchobert         ###   ########.fr       */
+/*   Updated: 2024/10/02 15:10:46 by tchobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static size_t	ft_count_words_charset(const char *str, char *charset)
 	nb_words = 0;
 	while (str[i] != '\0')
 	{
-		if (is_in_charset(str[i], charset) ==false && is_sep == true)
+		if (is_in_charset(str[i], charset) == false && is_sep == true)
 		{
 			is_sep = false;
 			++nb_words;
