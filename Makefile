@@ -115,7 +115,7 @@ HEADERS_DIR += includes
 
 HEADERS += $(HEADERS_DIR)/libft.h
 
-vpath %.h $(INCLUDES_DIR)
+vpath %.h $(HEADERS_DIR)
 
 ## OBJECTS ##
 
@@ -133,7 +133,7 @@ $(NAME): $(OBJS)
 	$(AR) $(ARFLAGS) $@ $^
 
 $(OBJS): %.o: %.c $(HEADERS)
-	$(CC) $(CFLAGS) -c $< -o $@ -I $(HEADERS)
+	$(CC) $(CFLAGS) -c $< -o $@ -I $(HEADERS_DIR)
 
 clean:
 	$(RM) $(OBJS) $(OBJS_BONUS)
