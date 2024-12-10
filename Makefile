@@ -20,9 +20,9 @@ ARFLAGS := rcs
 
 ## SOURCES ##
 
-SRCS_DIR += sources
-PRINTF_DIR += ft_printf
-GNL_DIR += get_next_line
+SRCS_DIR := sources
+PRINTF_DIR := ft_printf
+GNL_DIR := get_next_line
 
 SRCS += $(SRCS_DIR)/ft_isalpha.c
 SRCS += $(SRCS_DIR)/ft_isdigit.c
