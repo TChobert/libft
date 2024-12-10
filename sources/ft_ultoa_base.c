@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_ultoa_base.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tchobert <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: tchobert <tchobert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 19:29:51 by tchobert          #+#    #+#             */
-/*   Updated: 2024/08/05 14:03:32 by tchobert         ###   ########.fr       */
+/*   Updated: 2024/12/10 17:30:46 by tchobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,7 @@ char	*ft_ultoa_base(unsigned long n, const char *base)
 	char			*new_str;
 
 	new_str = NULL;
-	if (!check_base(base) || base_size <= 1 || n < 0)
+	if (!check_base(base) || base_size <= 1)
 	{
 		return (new_str);
 	}
