@@ -11,7 +11,6 @@ CC := cc
 CFLAGS += -Wall
 CFLAGS += -Wextra
 CFLAGS += -Werror
-CFLAGS += -Iincludes
 # CFLAGS += -fsanitize=address,undefined -g3
 
 AR := ar
@@ -111,7 +110,7 @@ SRCS += $(GNL_DIR)/get_next_line_utils.c
 
 ## HEADERS ##
 
-HEADERS_DIR += includes
+HEADERS_DIR := includes
 
 HEADERS += $(HEADERS_DIR)/libft.h
 
