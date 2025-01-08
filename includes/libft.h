@@ -101,7 +101,7 @@ int		ft_atoi_base(const char *nb, unsigned int base);
 char	*ft_getenv(char *key, char **env);
 void	ft_display_strs_array(char **array, int fd);
 
-// BONUS PART :
+// LIST FUNCTIONS :
 
 t_list	*ft_lstnew(void *content);
 void	ft_lstadd_front(t_list **lst, t_list *new);
@@ -112,5 +112,8 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *));
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+t_list	*ft_list_find_first(t_list *list, void *element,
+			bool (*predicate)(void *, void *));
+void	*ft_list_find_first_content_match(t_list *list, void *element, bool (*predicate)(void *, void *));
 
 #endif
