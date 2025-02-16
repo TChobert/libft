@@ -114,6 +114,8 @@ void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 t_list	*ft_list_find_first(t_list *list, void *element,
 			bool (*predicate)(void *, void *));
-void	*ft_list_find_first_content_match(t_list *list, void *element, bool (*predicate)(void *, void *));
+void	*ft_list_find_first_content_match(t_list *list, void *element,
+			bool (*predicate)(void *, void *));
+t_list	*ft_list_find_previous_element(t_list *lst, t_list *node);
 
 #endif

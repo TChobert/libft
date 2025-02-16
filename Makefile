@@ -89,6 +89,7 @@ SRCS += $(SRCS_DIR)/ft_getenv.c
 SRCS += $(SRCS_DIR)/ft_display_strs_array.c
 SRCS += $(SRCS_DIR)/ft_list_find_first.c
 SRCS += $(SRCS_DIR)/ft_list_first_content_match.c
+SRCS += $(SRCS_DIR)/ft_list_find_previous_element.c
 
 # PRINTF #
 
